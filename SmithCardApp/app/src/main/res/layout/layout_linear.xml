@@ -6,16 +6,51 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
     tools:context="com.example.jsjos.smithcardapp.MainActivity">
 
     <TextView
+        android:id="@+id/topLeftCardValueID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:paddingLeft="10dp"
+        android:text="@string/cardValue"
+        android:layout_gravity="top"/>
+    <ImageView
+        android:id="@+id/topLeftIconID"
+        android:src="@drawable/drawable_spade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/centerIconID"
+            android:src="@drawable/drawable_spade"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"/>
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/bottomRightIconID"
+        android:src="@drawable/drawable_spade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:scaleY="-1"/>
+    <TextView
+        android:id="@+id/bottomRightCardValueID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="10dp"
+        android:text="@string/cardValue"
+        android:layout_gravity="end"/>
 
 </LinearLayout>
