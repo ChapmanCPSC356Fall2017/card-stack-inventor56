@@ -2,4 +2,49 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/topLeftCardValueID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textSize="10pt"
+        android:typeface="serif"
+        android:text="@string/cardValue"
+        android:layout_gravity="top"/>
+
+    <ImageView
+        android:id="@+id/topLeftIconID"
+        android:src="@drawable/drawable_spade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="40dp"/>
+
+    <ImageView
+        android:id="@+id/centerIconID"
+        android:src="@drawable/drawable_spade"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:scaleType="fitXY"/>
+
+    <ImageView
+        android:id="@+id/bottomRightIconID"
+        android:src="@drawable/drawable_spade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="40dp"
+        android:scaleY="-1"/>
+    <TextView
+        android:id="@+id/bottomRightCardValueID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:typeface="serif"
+        android:textSize="10pt"
+        android:text="@string/cardValue"
+        android:layout_gravity="bottom|end"/>
+
 </FrameLayout>
