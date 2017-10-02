@@ -61,20 +61,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(!cardStack.empty()) {
-                    // Set the card for easy access via method
-                    Card tempCard = cardStack.pop();
-
-                    // Set and find the image resource for the Suit image
-                    int imageResource = getResources().getIdentifier(tempCard.getCardSuitValue(), null, getPackageName());
-                    //Set the drawable to pass into the setImageDrawable method below
-                    Drawable dr = ResourcesCompat.getDrawable(getResources(), imageResource, null);
-
-                    //Set screen values
-                    topLeftTextView.setText(tempCard.getCardAmountValue());
-                    topLeftImageView.setImageDrawable(dr);
-                    middleImageView.setImageDrawable(dr);
-                    bottomRightImageView.setImageDrawable(dr);
-                    bottomRightTextView.setText(tempCard.getCardAmountValue());
+                    // Set a new card onto the screen
+                    changeCard();
+                }
+                else {
+                    finish();
                 }
 
 
@@ -84,5 +75,32 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    }
+
+    @Override
+    protected void onStart() {
+        // Run this after everything is created, but before the first card becomes visible (you'll set it here)
+        super.onStart();
+        changeCard();
+
+    }
+
+    public void changeCard() {
+        if(!cardStack.empty()) {
+            // Set the card for easy access via method
+            Card tempCard = cardStack.pop();
+
+            // Set and find the image resource for the Suit image
+            int imageResource = getResources().getIdentifier(tempCard.getCardSuitValue(), null, getPackageName());
+            //Set the drawable to pass into the setImageDrawable method below
+            Drawable dr = ResourcesCompat.getDrawable(getResources(), imageResource, null);
+
+            //Set screen values
+            topLeftTextView.setText(tempCard.getCardAmountValue());
+            topLeftImageView.setImageDrawable(dr);
+            middleImageView.setImageDrawable(dr);
+            bottomRightImageView.setImageDrawable(dr);
+            bottomRightTextView.setText(tempCard.getCardAmountValue());
+        }
     }
 }
