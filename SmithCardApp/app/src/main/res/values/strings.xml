@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">SmithCardApp</string>
     <string name="cardValue">A</string>
+    <string name="cont_desc"> This is a picture of the card suit! </string>
 </resources>
