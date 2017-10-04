@@ -1,5 +1,6 @@
 package com.example.jsjos.smithcardapp;
 
+import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.support.v4.content.ContextCompat;
@@ -98,9 +99,15 @@ public class MainActivity extends AppCompatActivity {
             //Set screen values
             topLeftTextView.setText(tempCard.getCardAmountValue());
             topLeftImageView.setImageDrawable(dr);
-            middleImageView.setImageDrawable(dr);
             bottomRightImageView.setImageDrawable(dr);
             bottomRightTextView.setText(tempCard.getCardAmountValue());
+
+            // Set up middle image with specific imageView context (helps avoid errors)
+            Context context = middleImageView.getContext();
+            imageResource = getResources().getIdentifier(tempCard.getCardSuitValue(), null, context.getPackageName());
+            //Set the drawable to pass into the setImageDrawable method below
+            dr = ResourcesCompat.getDrawable(getResources(), imageResource, null);
+            middleImageView.setImageDrawable(dr);
         }
     }
 }
